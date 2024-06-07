@@ -1,0 +1,24 @@
+/*
+Theme Name: Thème FSE Capitaine WP Avancé 💥
+Theme URI: 
+Author: Capitaine WP
+Author URI: https://capitainewp.io
+Description: Thème agence pour le Full Site Editing avancé avec configuration JSON
+Requires at least: 6.5
+Tested up to: 6.5
+Requires PHP: 8.0
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: capitaine
+*/
+
+:root {
+  font-size: 18px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
