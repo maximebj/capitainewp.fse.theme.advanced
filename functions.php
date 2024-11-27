@@ -7,6 +7,7 @@ require_once __DIR__ . '/inc/binding.php';
 require_once __DIR__ . '/inc/config.php';
 require_once __DIR__ . '/inc/custom-post-types.php';
 require_once __DIR__ . '/inc/editor.php';
+require_once __DIR__ . '/inc/theme-json-loader.php';
 
 
 # Initialiser les classes
@@ -14,3 +15,4 @@ require_once __DIR__ . '/inc/editor.php';
 (new Config)->execute();
 (new CPT)->execute();
 (new Editor)->execute();
+(new ThemeJsonLoader)->execute();

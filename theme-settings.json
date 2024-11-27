@@ -1,0 +1,284 @@
+{
+    "useRootPaddingAwareAlignments": true,
+    "appearanceTools": false,
+    "layout": {
+        "contentSize": "760px",
+        "wideSize": "1140px",
+        "allowCustomContentAndWideSize": false,
+        "allowEditing": true
+    },
+    "color": {
+        "text": true,
+        "background": true,
+        "link": true,
+        "caption": true,
+        "button": true,
+        "heading": true,
+        "custom": false,
+        "customDuotone": true,
+        "customGradient": true,
+        "defaultDuotone": true,
+        "defaultGradients": true,
+        "defaultPalette": false,
+        "gradients": [
+            {
+                "name": "Purple",
+                "slug": "purple",
+                "gradient": "linear-gradient(135deg, #4D34FA, #ad34fa)"
+            },
+            {
+                "name": "Blue",
+                "slug": "blue",
+                "gradient": "linear-gradient(135deg, #0057FF, #31B5FF)"
+            },
+            {
+                "name": "Pink",
+                "slug": "pink",
+                "gradient": "linear-gradient(135deg, #FF007A, #FF81BD)"
+            }
+        ],
+        "duotone": [
+            {
+                "name": "Blue",
+                "slug": "blue",
+                "colors": ["#462CFF", "#ECE8FF"]
+            },
+            {
+                "name": "Pink",
+                "slug": "Pink",
+                "colors": ["#F22AAA", "#FFDBF0"]
+            },
+            {
+                "name": "Green",
+                "slug": "green",
+                "colors": ["#196A64", "#E0FFFD"]
+            }
+        ],
+        "palette": [
+            {
+                "name": "Violet",
+                "slug": "primary",
+                "color": "#2f1847"
+            },
+            {
+                "name": "Rose",
+                "slug": "secondary",
+                "color": "#fe2c70"
+            },
+            {
+                "name": "Vert pâle",
+                "slug": "accent",
+                "color": "#8be8cb"
+            },
+            {
+                "name": "Gris",
+                "slug": "contrast",
+                "color": "#725C84"
+            },
+            {
+                "name": "Blanc",
+                "slug": "white",
+                "color": "#FFFFFF"
+            },
+            {
+                "name": "Gris",
+                "slug": "gray",
+                "color": "#F9F7F3"
+            }
+        ]
+    },
+    "spacing": {
+        "blockGap": true,
+        "customSpacingSize": true,
+        "margin": true,
+        "padding": true,
+        "units": ["px", "em", "rem", "vh", "vw", "%"],
+        "defaultSpacingSizes": false,
+        "spacingSizes": [
+            {
+                "name": "Très petit",
+                "size": "1rem",
+                "slug": "xs"
+            },
+            {
+                "name": "Petit",
+                "size": "1.6rem",
+                "slug": "s"
+            },
+            {
+                "name": "Moyen",
+                "size": "3.2rem",
+                "slug": "m"
+            },
+            {
+                "name": "Grand",
+                "size": "4.8rem",
+                "slug": "l"
+            },
+            {
+                "name": "Très grand",
+                "size": "6.4rem",
+                "slug": "xl"
+            }
+        ]
+    },
+    "typography": {
+        "customFontSize": false,
+        "defaultFontSizes": false,
+        "dropCap": false,
+        "fluid": true,
+        "fontStyle": false,
+        "fontWeight": true,
+        "letterSpacing": false,
+        "lineHeight": true,
+        "textAlign": true,
+        "textColumns": false,
+        "textDecoration": false,
+        "textTransform": true,
+        "writingMode": false,
+        "fontFamilies": [
+            {
+                "fontFamily": "'Open Sans', sans-serif",
+                "name": "Open Sans",
+                "slug": "primary",
+                "fontFace": [
+                    {
+                        "fontFamily": "Open Sans",
+                        "fontStretch": "normal",
+                        "fontStyle": "normal",
+                        "fontWeight": "400",
+                        "src": ["file:./assets/fonts/open-sans-400.woff2"]
+                    },
+                    {
+                        "fontFamily": "Open Sans",
+                        "fontStretch": "normal",
+                        "fontStyle": "normal",
+                        "fontWeight": "700",
+                        "src": ["file:./assets/fonts/open-sans-700.woff2"]
+                    }
+                ]
+            },
+            {
+                "fontFamily": "'Work Sans', sans-serif",
+                "name": "Work Sans",
+                "slug": "secondary",
+                "fontFace": [
+                    {
+                        "fontFamily": "Work Sans",
+                        "fontStretch": "normal",
+                        "fontStyle": "normal",
+                        "fontWeight": "300 900",
+                        "src": ["file:./assets/fonts/work-sans-variable.woff2"]
+                    }
+                ]
+            }
+        ],
+        "fontSizes": [
+            {
+                "name": "Petit",
+                "size": "0.88rem",
+                "slug": "s"
+            },
+            {
+                "name": "Moyen",
+                "size": "1.125rem",
+                "slug": "m"
+            },
+            {
+                "name": "Grand",
+                "size": "1.4rem",
+                "slug": "l"
+            },
+            {
+                "name": "Très Grand",
+                "size": "3rem",
+                "slug": "xl"
+            },
+            {
+                "name": "Énorme",
+                "size": "4rem",
+                "slug": "xxl",
+                "fluid": {
+                    "min": "2rem",
+                    "max": "4rem"
+                }
+            }
+        ]
+    },
+    "border": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true
+    },
+    "background": {
+        "backgroundImage": true,
+        "backgroundSize": false
+    },
+    "shadow": {
+        "defaultPresets": true,
+        "presets": [
+            {
+                "name": "Douce",
+                "slug": "light",
+                "shadow": "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+            },
+            {
+                "name": "Fine",
+                "slug": "neat",
+                "shadow": "rgba(99, 99, 99, 0.4) 0px 2px 8px 0px"
+            },
+            {
+                "name": "Imposante",
+                "slug": "huge",
+                "shadow": "rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px"
+            }
+        ]
+    },
+    "dimensions": {
+        "aspectRatio": true,
+        "defaultAspectRatios": true,
+        "minHeight": true
+    },
+    "position": {
+        "sticky": true
+    },
+    "custom": {
+        "fontWeight": {
+            "regular": 400,
+            "semibold": 600,
+            "bold": 700,
+            "extrabold": 800
+        },
+        "lineHeight": {
+            "narrow": 1.2,
+            "regular": 1.5,
+            "large": 1.8
+        },
+        "radius": {
+            "s": "4px",
+            "m": "10px",
+            "l": "20px",
+            "full": "999px"
+        },
+        "color": {
+            "secondaryHover": "#F4014E",
+            "secondaryAlt": "#FE5D90",
+            "secondaryLight": "#FE85AC",
+            "secondaryDark": "#790127"
+        }
+    },
+    "blocks": {
+        "core/group": {
+            "color": {
+                "background": true
+            }
+        },
+        "core/image": {
+            "lightbox": {
+                "enabled": true,
+                "allowEditing": true
+            }
+        }
+    }
+}
