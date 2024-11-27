@@ -2,24 +2,24 @@
 
 namespace Capitaine;
 
-# Editor setup class
-class SetupEditor
+class Editor
 {
   # Extracted JSON configuration data
   protected array $config;
 
-  # All in one setup
-  public function setup()
+  public function execute(): void
   {
-    # Hooks
-    add_action('init', [$this, 'registerCustomBlocks']);
-    add_action('init', [$this, 'registerBlocksAssets']);
-
-    # Setup
+    $this->registerHooks();
     $this->setupEditorConfig();
   }
 
-  # Auto register custom blocks from blocks/* 
+  public function registerHooks(): void
+  {
+    add_action('init', [$this, 'registerCustomBlocks']);
+    add_action('init', [$this, 'registerBlocksAssets']);
+  }
+
+  # Déclarer automatiquement les blocs sur-mesure du dossier blocks/* 
   public function registerCustomBlocks(): void
   {
     $folders = glob(get_template_directory() . '/blocks/*/');
@@ -45,7 +45,7 @@ class SetupEditor
           'handle' => "capitaine-{$filename}",
           'src'    => get_theme_file_uri("assets/css/{$filename}.css"),
           'path'   => get_theme_file_path("assets/css/{$filename}.css"),
-          'ver'    => wp_get_environment_type() === 'local' ? filemtime($file) : null,
+          'ver'    => filemtime(get_theme_file_path("assets/css/{$filename}.css")),
         ]
       );
     }

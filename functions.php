@@ -2,11 +2,15 @@
 
 namespace Capitaine;
 
-# Include files
+# Inclure les fichiers
+require_once __DIR__ . '/inc/binding.php';
 require_once __DIR__ . '/inc/config.php';
+require_once __DIR__ . '/inc/custom-post-types.php';
 require_once __DIR__ . '/inc/editor.php';
-require_once __DIR__ . '/inc/post-types.php';
 
-# Init Classes
-$editor = new SetupEditor();
-$editor->setup();
+
+# Initialiser les classes
+(new Binding)->execute();
+(new Config)->execute();
+(new CPT)->execute();
+(new Editor)->execute();
