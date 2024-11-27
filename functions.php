@@ -3,16 +3,16 @@
 namespace Capitaine;
 
 # Inclure les fichiers
-require_once __DIR__ . '/inc/binding.php';
-require_once __DIR__ . '/inc/config.php';
-require_once __DIR__ . '/inc/custom-post-types.php';
-require_once __DIR__ . '/inc/editor.php';
-require_once __DIR__ . '/inc/theme-json-loader.php';
+require_once __DIR__ . '/classes/class-binding.php';
+require_once __DIR__ . '/classes/class-theme-setup.php';
+require_once __DIR__ . '/classes/class-custom-post-types.php';
+require_once __DIR__ . '/classes/class-block-editor-autoload.php';
+require_once __DIR__ . '/classes/class-json-config.php';
 
 
 # Initialiser les classes
-(new Binding)->execute();
-(new Config)->execute();
-(new CPT)->execute();
-(new Editor)->execute();
-(new ThemeJsonLoader)->execute();
+(new Binding)->registerHooks();
+(new BlockEditorAutoload)->registerHooks();
+(new CPT)->registerHooks();
+(new ThemeSetup)->registerHooks();
+(new JsonConfig)->setup();

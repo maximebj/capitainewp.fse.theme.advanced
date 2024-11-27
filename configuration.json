@@ -15,21 +15,18 @@
         "capitaine": "Capitaine WP"
     },
     "registerPatternsCategories": {
-        "design": "Accroches",
-        "card": "Sections",
-        "marketing": "Marketing"
+        "design": "Design",
+        "card": "Cartes",
+        "marketing": "Marketing",
+        "page": "Pages"
     },
     "deregisterBlocks": [
         "core/preformatted",
         "core/pullquote",
-        "core/quote",
         "core/rss",
-        "core/search",
-        "core/verse",
-        "core/social-links",
-        "core/social-link"
+        "core/verse"
     ],
-    "deregisterStylesheets": ["core/columns"],
+    "deregisterBlocksStylesheets": ["core/columns"],
     "deregisterBlocksStyles": {
         "core/button": ["outline"],
         "core/separator": ["dots", "wide"],

@@ -4,11 +4,6 @@ namespace Capitaine;
 
 class Binding
 {
-    public function execute(): void
-    {
-        $this->registerHooks();
-    }
-
     public function registerHooks(): void
     {
         add_action('init', [$this, 'registerMetas']);

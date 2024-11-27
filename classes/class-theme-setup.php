@@ -2,20 +2,16 @@
 
 namespace Capitaine;
 
-class Config
+class ThemeSetup
 {
-    public function execute(): void
-    {
-        $this->registerHooks();
-        $this->setupFeatures();
-    }
-
     public function registerHooks(): void
     {
         add_action('wp_enqueue_scripts', [$this, 'registerAssets']);
         add_filter('upload_mimes', [$this, 'allowMimeTypes']);
         add_filter('wp_check_filetype_and_ext', [$this, 'allowFileTypes'], 10, 4);
         add_filter('sanitize_file_name', 'remove_accents');
+
+        $this->setupFeatures();
     }
 
     # Charger les styles et les scripts

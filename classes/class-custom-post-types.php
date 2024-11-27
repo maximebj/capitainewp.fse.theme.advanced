@@ -4,12 +4,7 @@ namespace Capitaine;
 
 class CPT
 {
-    public function execute(): void
-    {
-        $this->registerHooks();
-    }
-
-    protected function registerHooks(): void
+    public function registerHooks(): void
     {
         add_action('init', [$this, 'registerPostTypes']);
     }
