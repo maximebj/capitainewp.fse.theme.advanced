@@ -57,8 +57,8 @@ class BlockEditorAutoload
         # Injecter les données
         $new_data = [
             'version' => 3,
-            'styles' => $theme_styles,
-            'settings' => $theme_settings,
+            'settings' => $theme_settings['settings'],
+            'styles' => $theme_styles['styles'],
         ];
 
         # Mettre à jour le theme.json de WordPress
