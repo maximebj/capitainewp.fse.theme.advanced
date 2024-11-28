@@ -4,6 +4,7 @@ namespace Capitaine;
 
 class JsonConfig
 {
+    # La configuration récupérée en JSON
     public $configurationData = [];
 
     # Mise en place des hooks impactés par la configuration
@@ -81,6 +82,7 @@ class JsonConfig
     public function registerPatternsCategories(): void
     {
         $patterns = $this->getConfigDataByKey('registerPatternsCategories');
+
         foreach ($patterns as $name => $label) {
             $category = ['label' => $label];
             register_block_pattern_category($name, $category);
@@ -91,6 +93,7 @@ class JsonConfig
     public function deregisterBlocks(): array
     {
         $blocks_to_disable = $this->getConfigDataByKey('deregisterBlocks');
+
         $blocks = array_keys(\WP_Block_Type_Registry::get_instance()->get_all_registered());
 
         return array_values(array_diff($blocks, $blocks_to_disable));
