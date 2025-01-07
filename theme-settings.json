@@ -150,6 +150,7 @@
                             "fontStretch": "normal",
                             "fontStyle": "normal",
                             "fontWeight": "400",
+                            "fontDisplay": "swap",
                             "src": ["file:./assets/fonts/open-sans-400.woff2"]
                         },
                         {
@@ -157,6 +158,7 @@
                             "fontStretch": "normal",
                             "fontStyle": "normal",
                             "fontWeight": "700",
+                            "fontDisplay": "swap",
                             "src": ["file:./assets/fonts/open-sans-700.woff2"]
                         }
                     ]
@@ -171,6 +173,7 @@
                             "fontStretch": "normal",
                             "fontStyle": "normal",
                             "fontWeight": "300 900",
+                            "fontDisplay": "swap",
                             "src": [
                                 "file:./assets/fonts/work-sans-variable.woff2"
                             ]
