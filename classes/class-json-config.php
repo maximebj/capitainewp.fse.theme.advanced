@@ -17,9 +17,6 @@ class JsonConfig
         foreach ($this->configurationData as $key => $data) {
 
             switch ($key) {
-                case 'registerBlocksStyles':
-                    add_action('init', [$this, 'registerBlocksStyles']);
-                    break;
                 case 'registerBlocksCategories':
                     add_filter('block_categories_all', [$this, 'registerBlocksCategories']);
                     break;
@@ -37,24 +34,6 @@ class JsonConfig
                     break;
                 default:
                     break;
-            }
-        }
-    }
-
-    # Déclarer de nouvelles variations de blocs
-    function registerBlocksStyles(): void
-    {
-        $block_styles = $this->getConfigDataByKey('registerBlocksStyles');
-
-        foreach ($block_styles as $block_name => $styles) {
-            foreach ($styles as $style_name => $style_label) {
-                register_block_style(
-                    $block_name,
-                    [
-                        'name' => $style_name,
-                        'label' => $style_label,
-                    ]
-                );
             }
         }
     }

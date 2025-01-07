@@ -1,16 +1,4 @@
 {
-    "registerBlocksStyles": {
-        "core/buttons": {
-            "small": "Petits"
-        },
-        "core/button": {
-            "square": "Carré",
-            "shadow": "Ombré"
-        },
-        "core/group": {
-            "diagonal-separator": "Séparation diagonale"
-        }
-    },
     "registerBlocksCategories": {
         "capitaine": "Capitaine WP"
     },
