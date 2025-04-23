@@ -78,6 +78,17 @@ class JsonConfig
         return array_values(array_diff($blocks, $blocks_to_disable));
     }
 
+    # Retirer les feuilles de styles natives de certains blocs
+    public function deregisterBlocksStylesheets(): void
+    {
+        $blocks_stylesheets_to_disable = $this->getConfigDataByKey('deregisterBlocksStylesheets');
+
+        foreach ($blocks_stylesheets_to_disable as $block) {
+            $handle = str_replace('core/', '', $block);
+            wp_dequeue_style("wp-block-$handle");
+        }
+    }
+
     # Retirer certains styles de blocs par défaut
     public function deregisterBlocksStyles(): void
     {
@@ -89,6 +100,7 @@ class JsonConfig
             get_template_directory_uri() . '/assets/js/unregister-blocks-styles.js',
             ['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
             wp_get_theme()->get('Version'),
+            true
         );
 
         # Créer un objet JS pour les styles à désactiver
@@ -96,17 +108,6 @@ class JsonConfig
 
         # Ajouter la variable dans la page HTML avant le script
         wp_add_inline_script('unregister-styles', $inline_js, 'before');
-    }
-
-    # Retirer les feuilles de styles natives de certains blocs
-    public function deregisterBlocksStylesheets(): void
-    {
-        $blocks_stylesheets_to_disable = $this->getConfigDataByKey('deregisterBlocksStylesheets');
-
-        foreach ($blocks_stylesheets_to_disable as $block) {
-            $handle = str_replace('core/', '', $block);
-            wp_dequeue_style("wp-block-$handle");
-        }
     }
 
     # Charger le fichier de configuration JSON
