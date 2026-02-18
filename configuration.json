@@ -25,5 +25,49 @@
         "core/social-links": ["pills-shape"],
         "core/table": ["stripes"],
         "core/tag-cloud": ["outline"]
-    }
+    },
+    "customPostTypes": [
+        {
+            "slug": "portfolio",
+            "args": {
+                "labels": {
+                    "name": "Portfolio",
+                    "singular_name": "Projet",
+                    "menu_name": "Portfolio",
+                    "all_items": "Tous les projets",
+                    "add_new_item": "Ajouter un projet",
+                    "edit_item": "Modifier le projet"
+                },
+                "public": true,
+                "show_in_rest": true,
+                "has_archive": true,
+                "supports": [
+                    "title",
+                    "editor",
+                    "thumbnail",
+                    "revisions",
+                    "custom-fields"
+                ],
+                "menu_position": 5,
+                "menu_icon": "dashicons-admin-appearance"
+            },
+            "taxonomies": [
+                {
+                    "slug": "type-projets",
+                    "args": {
+                        "labels": {
+                            "name": "Types de projets",
+                            "singular_name": "Type de projet",
+                            "add_new_item": "Ajouter un Type de Projet",
+                            "new_item_name": "Nom du nouveau Projet",
+                            "parent_item": "Type de projet parent"
+                        },
+                        "public": true,
+                        "show_in_rest": true,
+                        "hierarchical": true
+                    }
+                }
+            ]
+        }
+    ]
 }

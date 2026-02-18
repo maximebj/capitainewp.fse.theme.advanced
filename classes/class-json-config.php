@@ -34,6 +34,12 @@ class JsonConfig
                 case 'deregisterBlocksStyles':
                     add_action('enqueue_block_editor_assets', [$this, 'deregisterBlocksStyles']);
                     break;
+                case 'customPostTypes':
+                    add_action('init', [$this, 'registerPostTypes']);
+                    break;
+                case 'customTaxonomies':
+                    add_action('init', [$this, 'registerTaxonomies']);
+                    break;
                 default:
                     break;
             }
@@ -110,6 +116,20 @@ class JsonConfig
 
         # Ajouter la variable dans la page HTML avant le script
         wp_add_inline_script('unregister-styles', $inline_js, 'before');
+    }
+
+    # Déclarer des types de publication personnalisés et leurs taxonomies
+    public function registerPostTypes(): void
+    {
+        $post_types = $this->getConfigDataByKey('customPostTypes');
+
+        foreach ($post_types as $post_type) {
+            register_post_type($post_type['slug'], $post_type['args']);
+
+            foreach ($post_type['taxonomies'] as $taxonomy) {
+                register_taxonomy($taxonomy['slug'], $post_type['slug'], $taxonomy['args']);
+            }
+        }
     }
 
     # Charger le fichier de configuration JSON
