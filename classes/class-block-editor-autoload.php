@@ -62,6 +62,14 @@ class BlockEditorAutoload
         ];
 
         # Mettre à jour le theme.json de WordPress
-        return $theme_json->update_with($new_data);
+        $new_theme_json = $theme_json->update_with($new_data);
+
+        # L'admin a accès à toutes les options
+        if (current_user_can('edit_theme_options')) {
+            $with_admin_access = json_decode(file_get_contents(get_theme_file_path("admin.json")), true);
+            $new_theme_json = $new_theme_json->update_with($with_admin_access);
+        }
+
+        return $new_theme_json;
     }
 }
