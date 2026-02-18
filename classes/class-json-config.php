@@ -2,6 +2,8 @@
 
 namespace Capitaine;
 
+use WP_Block_Type_Registry;
+
 class JsonConfig
 {
     # La configuration récupérée en JSON
@@ -73,7 +75,7 @@ class JsonConfig
     {
         $blocks_to_disable = $this->getConfigDataByKey('deregisterBlocks');
 
-        $blocks = array_keys(\WP_Block_Type_Registry::get_instance()->get_all_registered());
+        $blocks = array_keys(WP_Block_Type_Registry::get_instance()->get_all_registered());
 
         return array_values(array_diff($blocks, $blocks_to_disable));
     }

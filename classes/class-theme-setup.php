@@ -7,8 +7,6 @@ class ThemeSetup
     public function registerHooks(): void
     {
         add_action('wp_enqueue_scripts', [$this, 'registerAssets']);
-        add_filter('upload_mimes', [$this, 'allowMimeTypes']);
-        add_filter('wp_check_filetype_and_ext', [$this, 'allowFileTypes'], 10, 4);
         add_filter('sanitize_file_name', 'remove_accents');
 
         $this->setupFeatures();
@@ -18,26 +16,6 @@ class ThemeSetup
     public function registerAssets(): void
     {
         wp_enqueue_style('main', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
-    }
-
-    # Autoriser les SVG et le WebP
-    public function allowMimeTypes($mimes): array
-    {
-        $mimes['svg'] = 'image/svg+xml';
-        $mimes['webp'] = 'image/webp';
-
-        return $mimes;
-    }
-
-    # Autoriser les SVG
-    public function allowFileTypes($types, $file, $filename, $mimes): array
-    {
-        if (false !== strpos($filename, '.webp')) {
-            $types['ext'] = 'webp';
-            $types['type'] = 'image/webp';
-        }
-
-        return $types;
     }
 
     # Activer et désactiver des fonctionnalités
