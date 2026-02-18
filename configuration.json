@@ -12,12 +12,18 @@
         "core/preformatted",
         "core/pullquote",
         "core/rss",
-        "core/verse"
+        "core/verse",
+        "core/math"
     ],
-    "deregisterBlocksStylesheets": [],
+    "deregisterBlocksStylesheets": ["core/columns"],
     "deregisterBlocksStyles": {
-        "core/button": ["outline"],
+        "core/button": ["outline", "fill"],
         "core/separator": ["dots", "wide"],
-        "core/image": ["rounded"]
+        "core/image": ["rounded"],
+        "core/quote": ["plain"],
+        "core/site-logo": ["rounded"],
+        "core/social-links": ["pills-shape"],
+        "core/table": ["stripes"],
+        "core/tag-cloud": ["outline"]
     }
 }
