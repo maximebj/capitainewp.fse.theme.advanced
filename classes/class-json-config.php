@@ -37,9 +37,6 @@ class JsonConfig
                 case 'customPostTypes':
                     add_action('init', [$this, 'registerPostTypes']);
                     break;
-                case 'customTaxonomies':
-                    add_action('init', [$this, 'registerTaxonomies']);
-                    break;
                 default:
                     break;
             }
@@ -106,7 +103,7 @@ class JsonConfig
         wp_enqueue_script(
             'unregister-styles',
             get_template_directory_uri() . '/assets/js/unregister-blocks-styles.js',
-            ['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
+            ['wp-blocks', 'wp-dom-ready'],
             wp_get_theme()->get('Version'),
             true
         );
