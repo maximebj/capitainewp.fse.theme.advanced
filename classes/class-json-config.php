@@ -109,7 +109,7 @@ class JsonConfig
         );
 
         # Créer un objet JS pour les styles à désactiver
-        $inline_js = "var disableBlocksStyles = " . json_encode($blocks_styles_to_disable) . ";\n";
+        $inline_js = "const disableBlocksStyles = " . json_encode($blocks_styles_to_disable) . ";\n";
 
         # Ajouter la variable dans la page HTML avant le script
         wp_add_inline_script('unregister-styles', $inline_js, 'before');
