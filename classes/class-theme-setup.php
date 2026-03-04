@@ -7,6 +7,7 @@ class ThemeSetup
     public function registerHooks(): void
     {
         add_action('wp_enqueue_scripts', [$this, 'registerAssets']);
+        add_action('enqueue_block_editor_assets', [$this, 'registerEditorAssets']);
         add_filter('sanitize_file_name', 'remove_accents');
 
         $this->setupFeatures();
@@ -14,6 +15,12 @@ class ThemeSetup
 
     # Charger les styles et les scripts
     public function registerAssets(): void
+    {
+        wp_enqueue_style('main', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
+    }
+
+    # Charger les styles et les scripts dans l'éditeur
+    public function registerEditorAssets(): void
     {
         wp_enqueue_style('main', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
     }
