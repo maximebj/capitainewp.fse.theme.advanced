@@ -123,8 +123,21 @@ class JsonConfig
         foreach ($post_types as $post_type) {
             register_post_type($post_type['slug'], $post_type['args']);
 
-            foreach ($post_type['taxonomies'] as $taxonomy) {
-                register_taxonomy($taxonomy['slug'], $post_type['slug'], $taxonomy['args']);
+            # Déclarer les noms de templates
+            if (isset($post_type['templates'])) {
+                foreach ($post_type['templates'] as $template) {
+                    register_block_template(basename(get_stylesheet_directory()) . '//' . $template['slug'], [
+                        'title'       => $template['title'],
+                        'description' => $template['description'],
+                    ]);
+                }
+            }
+
+            # Déclarer les taxonomies
+            if (isset($post_type['taxonomies'])) {
+                foreach ($post_type['taxonomies'] as $taxonomy) {
+                    register_taxonomy($taxonomy['slug'], $post_type['slug'], $taxonomy['args']);
+                }
             }
         }
     }

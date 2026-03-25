@@ -69,6 +69,18 @@
                 "menu_position": 5,
                 "menu_icon": "dashicons-admin-appearance"
             },
+            "templates": [
+                {
+                    "slug": "archive-portfolio",
+                    "title": "Archive Portfolio",
+                    "description": "List all portfolio items."
+                },
+                {
+                    "slug": "single-portfolio",
+                    "title": "Single Portfolio",
+                    "description": "Display a single portfolio item."
+                }
+            ],
             "taxonomies": [
                 {
                     "slug": "type-projets",
