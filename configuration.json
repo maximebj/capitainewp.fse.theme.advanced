@@ -44,6 +44,19 @@
             "outline"
         ]
     },
+    "defaultBlockOptions": {
+        "core/image": {
+            "sizeSlug": "full"
+        },
+        "core/heading": {
+            "levelOptions": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    },
     "customPostTypes": [
         {
             "slug": "portfolio",

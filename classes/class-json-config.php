@@ -34,6 +34,9 @@ class JsonConfig
                 case 'deregisterBlocksStyles':
                     add_action('enqueue_block_editor_assets', [$this, 'deregisterBlocksStyles']);
                     break;
+                case 'defaultBlockOptions':
+                    add_action("register_block_type_args", [$this, 'registerDefaultBlockOptions'], 10, 2);
+                    break;
                 case 'customPostTypes':
                     add_action('init', [$this, 'registerPostTypes']);
                     break;
@@ -113,6 +116,22 @@ class JsonConfig
 
         # Ajouter la variable dans la page HTML avant le script
         wp_add_inline_script('unregister-styles', $inline_js, 'before');
+    }
+
+    # Déclarer les options par défaut pour les blocs
+    public function registerDefaultBlockOptions($args, $block_type): array
+    {
+        $default_block_options = $this->getConfigDataByKey('defaultBlockOptions');
+
+        foreach ($default_block_options as $block => $options) {
+            if ($block === $block_type) {
+                foreach ($options as $option => $value) {
+                    $args["attributes"][$option]["default"] = $value;
+                }
+            }
+        }
+
+        return $args;
     }
 
     # Déclarer des types de publication personnalisés et leurs taxonomies
